@@ -1,4 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://0b8grbyjs1xl"]
+[gd_scene load_steps=7 format=3 uid="uid://0b8grbyjs1xl"]
+
+[ext_resource type="Script" path="res://PlayerMovement.cs" id="1_vjpg2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ym7w"]
 size = Vector2(16, 128)
@@ -19,6 +21,7 @@ size = Vector2(136, 698)
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(96, 240)
+script = ExtResource("1_vjpg2")
 
 [node name="ColorRect" type="ColorRect" parent="Player"]
 offset_right = 16.0
