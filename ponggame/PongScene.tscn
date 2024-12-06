@@ -1,7 +1,19 @@
-[gd_scene load_steps=2 format=3 uid="uid://0b8grbyjs1xl"]
+[gd_scene load_steps=6 format=3 uid="uid://0b8grbyjs1xl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ym7w"]
 size = Vector2(16, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2nr68"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_577ef"]
+size = Vector2(1170, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugfea"]
+size = Vector2(34, 696)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chlj6"]
+size = Vector2(136, 698)
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +27,44 @@ offset_bottom = 128.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(8, 64)
 shape = SubResource("RectangleShape2D_3ym7w")
+
+[node name="Ball" type="CharacterBody2D" parent="."]
+position = Vector2(568, 240)
+
+[node name="ColorRect" type="ColorRect" parent="Ball"]
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_2nr68")
+
+[node name="Walls" type="StaticBody2D" parent="."]
+
+[node name="Top Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(575, 11)
+shape = SubResource("RectangleShape2D_577ef")
+
+[node name="Bottom Wall" type="CollisionShape2D" parent="Walls"]
+position = Vector2(576, 664)
+shape = SubResource("RectangleShape2D_577ef")
+
+[node name="Bottom Wall2" type="CollisionShape2D" parent="Walls"]
+position = Vector2(1175, 332)
+shape = SubResource("RectangleShape2D_ugfea")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Left Area" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-76, 339)
+shape = SubResource("RectangleShape2D_chlj6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 552.0
+offset_top = 80.0
+offset_right = 604.0
+offset_bottom = 205.0
+theme_override_font_sizes/font_size = 91
+text = "1"
