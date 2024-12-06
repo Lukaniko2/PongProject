@@ -13,6 +13,11 @@ public partial class BallMovement : CharacterBody2D
 	{
 		parentNode = (Main)GetParent();
 		
+		ResetBall();
+	}
+	
+	public void ResetBall()
+	{
 		//Reset the position of the ball to the center of the screen
 		Position = GetViewportRect().Size / 2;
 		

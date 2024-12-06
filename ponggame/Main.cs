@@ -29,5 +29,13 @@ public partial class Main : Node2D
 		scoreText.SetText(score.ToString());
 	}
 	
+	private void OnAreaEntered(Node2D otherNode)
+	{
+		BallMovement ball = otherNode as BallMovement;
+		ball.ResetBall();
+		ResetScore();
+		GD.Print("EnteredArea");
+	}
+	
 	
 }

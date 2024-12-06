@@ -75,3 +75,5 @@ offset_right = 604.0
 offset_bottom = 205.0
 theme_override_font_sizes/font_size = 91
 text = "0"
+
+[connection signal="body_entered" from="Area2D" to="." method="OnAreaEntered"]
