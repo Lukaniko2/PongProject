@@ -24,6 +24,7 @@ script = ExtResource("1_xrlqb")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(96, 240)
+motion_mode = 1
 script = ExtResource("1_vjpg2")
 
 [node name="ColorRect" type="ColorRect" parent="Player"]
